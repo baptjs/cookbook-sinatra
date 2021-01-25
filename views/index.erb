@@ -1,0 +1,13 @@
+<% require_relative '../../../01-Cookbook-Advanced/lib/cookbook'
+require_relative '../../../01-Cookbook-Advanced/lib/controller'  # You need to create this file!
+
+csv_file   = File.join(__dir__, 'recipes.csv')
+cookbook   = Cookbook.new(csv_file)
+controller = Controller.new(cookbook)
+
+cookbook.all.each{ |recipe| puts recipe.name } %>
+
+<!-- <p>
+  I'm in a <em>view</em>!
+</p>
+ -->
